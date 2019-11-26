@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Petter Hetland'
-__email__ = 'pehe@nmbu.no'
+__author__ = "Petter Hetland"
+__email__ = "pehe@nmbu.no"
 
 
 class LCGRand:
@@ -53,7 +53,7 @@ class LCGRand:
         while True:
             num_of_randoms += 1
             randoms.append(self.rand())
-            yield randoms[num_of_randoms-1]
+            yield randoms[num_of_randoms - 1]
 
 
 class RandIter:
@@ -89,8 +89,9 @@ class RandIter:
             self.num_generated_numbers = 0
             return self
         else:
-            raise RuntimeError("__iter__ has already been called on this "
-                               "RandIter object.")
+            raise RuntimeError(
+                "__iter__ has already been called on this " "RandIter object."
+            )
 
     def __next__(self):
         """
@@ -110,7 +111,8 @@ class RandIter:
         """
         if self.num_generated_numbers is None:
             raise RuntimeError(
-                f'{type(self)} is not initialised as an iterator.')
+                f"{type(self)} is not initialised as an iterator."
+            )
         if self.num_generated_numbers == self.length:
             raise StopIteration
         return self.generator.rand()
@@ -124,8 +126,9 @@ if __name__ == "__main__":
         print(rand)
 
     print("\nTesting infinite_random_sequence function: \n")
-    for i, rand in enumerate(random_number_generator.infinite_random_sequence()
-                             ):
-        print(f'The {i}-th random number is {rand}')
+    for i, rand in enumerate(
+        random_number_generator.infinite_random_sequence()
+    ):
+        print(f"The {i}-th random number is {rand}")
         if i > 100:
             break

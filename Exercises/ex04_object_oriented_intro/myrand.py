@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Petter Hetland'
-__email__ = 'pehe@nmbu.no'
+__author__ = "Petter Hetland"
+__email__ = "pehe@nmbu.no"
 
 
 class LCGRand:
@@ -14,11 +14,12 @@ class LCGRand:
 
     where ``a = 7**5 = 16807`` and ``m = 2**31-1``.
     """
+
     def __init__(self, seed):
         self.init_number = seed
 
     def rand(self):
-        next_number = (16807 * self.init_number) % (2**31-1)
+        next_number = (16807 * self.init_number) % (2 ** 31 - 1)
         self.init_number = next_number
         return next_number
 
@@ -48,19 +49,19 @@ class ListRand:
             raise RuntimeError("We're out of numbers!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Print header
-    print('\nTesting LCGRand:')
+    print("\nTesting LCGRand:")
     # Create LCGRand instance:
     lcg_rand = LCGRand(346)
     # Loop through and print the n first random numbers:
     for i in range(5):
-        print(f'Random number {i + 1}: {lcg_rand.rand()}')
+        print(f"Random number {i + 1}: {lcg_rand.rand()}")
 
     # Print header
-    print('\nTesting ListRand:')
+    print("\nTesting ListRand:")
     # Create ListRand instance:
     list_rand = ListRand([1, 6, 0, 4, 3, 8])
     # Loop through and print the n first random numbers:
     for i in range(8):
-        print(f'Random number {i + 1}: {list_rand.rand()}')
+        print(f"Random number {i + 1}: {list_rand.rand()}")

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Petter Hetland'
-__email__ = 'pehe@nmbu.no'
+__author__ = "Petter Hetland"
+__email__ = "pehe@nmbu.no"
 
 import random as r
 from walker_sim import Walker, Simulation
@@ -74,10 +74,9 @@ class BoundedSimulation(Simulation):
         int
             The number of steps taken
         """
-        bw = BoundedWalker(self.start,
-                           self.home,
-                           self.left_limit,
-                           self.right_limit)
+        bw = BoundedWalker(
+            self.start, self.home, self.left_limit, self.right_limit
+        )
 
         while not bw.is_at_home():
             bw.bounded_move()
@@ -105,8 +104,10 @@ class BoundedSimulation(Simulation):
         return moves_count
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for l_limit in [0, -10, -100, -1000, -10000]:
         bounded_sim = BoundedSimulation(0, 20, 2, l_limit, 20)
-        print('With a left boundary for {:6}: '.format(l_limit),
-              bounded_sim.run_simulation(20))
+        print(
+            "With a left boundary for {:6}: ".format(l_limit),
+            bounded_sim.run_simulation(20),
+        )

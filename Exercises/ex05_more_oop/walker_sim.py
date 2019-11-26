@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-__author__ = 'Petter Hetland'
-__email__ = 'pehe@nmbu.no'
+__author__ = "Petter Hetland"
+__email__ = "pehe@nmbu.no"
 
 import random as r
 
@@ -32,7 +32,7 @@ class Walker:
         return self.num_steps
 
 
-class Simulation():
+class Simulation:
     def __init__(self, start, home, seed):
         """Initialise the simulation
 
@@ -84,15 +84,17 @@ class Simulation():
         return moves_count
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Simulation number one:
     sim_one = Simulation(0, 10, 12345)
 
     # Header for sim one and two:
-    print(f"""
+    print(
+        f"""
 The result of 20 simulations with start at {sim_one.start}, \
 home at {sim_one.home} and a seed of {sim_one.seed} is:
-    """)
+    """
+    )
 
     print(sim_one.run_simulation(20))
 
@@ -105,10 +107,12 @@ home at {sim_one.home} and a seed of {sim_one.seed} is:
     sim_three = Simulation(0, 10, 54321)
 
     # Header for simulation number three:
-    print(f"""
+    print(
+        f"""
 The result of 20 simulations with start at {sim_three.start}, \
 home at {sim_three.home} and a seed of {sim_three.seed} is:
-    """)
+    """
+    )
 
     print(sim_three.run_simulation(20))
 
@@ -116,10 +120,12 @@ home at {sim_three.home} and a seed of {sim_three.seed} is:
     sim_four = Simulation(10, 0, 12345)
 
     # Header for simulation number four and five:
-    print(f"""
+    print(
+        f"""
 The result of 20 simulations with start at {sim_four.start}, \
 home at {sim_four.home} and a seed of {sim_four.seed} is:
-        """)
+        """
+    )
 
     print(sim_four.run_simulation(20))
 
@@ -132,9 +138,11 @@ home at {sim_four.home} and a seed of {sim_four.seed} is:
     sim_six = Simulation(10, 0, 54321)
 
     # Header for simulation number six:
-    print(f"""
+    print(
+        f"""
 The result of 20 simulations with start at {sim_six.start}, \
 home at {sim_six.home} and a seed of {sim_six.seed} is:
-        """)
+        """
+    )
 
     print(sim_six.run_simulation(20))
